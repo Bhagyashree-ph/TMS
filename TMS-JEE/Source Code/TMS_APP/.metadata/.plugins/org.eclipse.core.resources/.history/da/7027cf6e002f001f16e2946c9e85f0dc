@@ -1,0 +1,95 @@
+package training.iqgateway.tests;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.junit.*;
+
+import training.iqgateway.dao.CustomerDAO;
+import training.iqgateway.dao.impl.CustomerDAOImpl;
+import training.iqgateway.entities.CustomerEO;
+
+public class CustomerTest {
+
+	private CustomerDAO custDAORef = new CustomerDAOImpl();
+
+	@Test
+	public void addDepartmentTest() {
+		CustomerEO CustomerEORef = new CustomerEO(110, "Shruti", "Bangalore", "+91 9876543210");
+		Integer returnedDepartmentID = custDAORef.addDepartment(CustomerEORef);
+		Assert.assertEquals(new Integer(320), returnedDepartmentID);
+	}
+
+	@Test
+	public void updateDepartmentTest() {
+		CustomerEO CustomerEORef = new CustomerEO(320, "Learning and Development", 100, 1700);
+		// Invoke the operation
+		custDAORef.updateDepartment(CustomerEORef);
+		// Test the operation
+		CustomerEO returnedDeptEORef = custDAORef.findDepartmentByID(320);
+		Assert.assertEquals("Learning and Development", returnedDeptEORef.getDepartmentName());
+	}
+
+	@Test
+	public void deleteDepartmnetTest() {
+		// Invoke the operation
+		Integer toBeDeleted = new Integer(320);
+		custDAORef.deleteDepartment(toBeDeleted);
+		// Test the operation
+		CustomerEO returnedDeptEORef = custDAORef.findDepartmentByID(320);
+		Assert.assertNull(returnedDeptEORef);
+	}
+	
+	@Test
+	public void finByDeptIDTest() {
+		// Invoke the operation
+		Integer toBeFound = new Integer(110);
+		// Test the operation
+		CustomerEO returnedDeptEORef = custDAORef.findDepartmentByID(toBeFound);
+		Assert.assertNotNull(returnedDeptEORef);
+	}
+	
+	@Test
+	public void findAllDeptTest() {
+		//Invoke the operation
+		List<CustomerEO> returnedDeptsList = custDAORef.findAll();
+		Assert.assertNotNull(returnedDeptsList);
+		for (Iterator iterator = returnedDeptsList.iterator(); iterator.hasNext();) {
+			CustomerEO CustomerEO = (CustomerEO) iterator.next();
+			System.out.println(CustomerEO);
+		}
+		
+	}
+	
+	@Test
+	public void findDeptNameAndMgrIDTest() {
+		//Invoke the operation
+		List<CustomerEO> returnedDeptsList = custDAORef.findDepartmentNameAndManagerID();
+		Assert.assertNotNull(returnedDeptsList);
+		for (Iterator iterator = returnedDeptsList.iterator(); iterator.hasNext();) {
+			Object	[]depts = (Object[]) iterator.next();
+			System.out.println(depts[0] + " " + depts[1]);
+		}
+		
+	}
+	
+	@Test
+	public void findDepartmentByNameTest() {
+		List<CustomerEO> returnedDeptsList = custDAORef.findDepartmentByName("Testing");
+		Assert.assertNotNull(returnedDeptsList);
+		for (Iterator iterator = returnedDeptsList.iterator(); iterator.hasNext();) {
+			CustomerEO CustomerEO = (CustomerEO) iterator.next();
+			System.out.println(CustomerEO);
+		}
+	}
+	
+	@Test
+	public void findDeptByGivenLocationIDTest() {
+		List<CustomerEO> returnedDeptsList = custDAORef.findDeptByGivenLocationID(1700);
+		Assert.assertNotNull(returnedDeptsList);
+		for (Iterator iterator = returnedDeptsList.iterator(); iterator.hasNext();) {
+			CustomerEO CustomerEO = (CustomerEO) iterator.next();
+			System.out.println(CustomerEO);
+		}
+	}
+}

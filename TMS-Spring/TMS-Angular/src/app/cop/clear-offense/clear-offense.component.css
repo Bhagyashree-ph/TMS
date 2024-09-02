@@ -1,0 +1,35 @@
+input[type="text"] {
+  width: 300px;
+  ;
+}
+
+.spinner {
+  /* margin-top: 70px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#offense-table-container {
+  /* display: none; Initially hide the table */
+  margin-top: 20px;
+}
+
+#offense-table-container table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#offense-table-container th,
+#offense-table-container td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+#offense-table-container th {
+  background-color: #f2f2f2;
+  font-weight: 20px;
+  font-size: 15px;
+  color: black;
+}

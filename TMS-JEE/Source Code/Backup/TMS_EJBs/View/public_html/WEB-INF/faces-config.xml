@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee">
+  <application>
+    <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+  </application>
+  <managed-bean>
+    <managed-bean-name>backing_Admin</managed-bean-name>
+    <managed-bean-class>tms.view.backing.Admin</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Admin.jspx-->
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>backing_Login</managed-bean-name>
+    <managed-bean-class>tms.view.backing.Login</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Login.jspx-->
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>backing_Admin2</managed-bean-name>
+    <managed-bean-class>tms.view.backing.Admin2</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Admin.jsp-->
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>backing_Admin3</managed-bean-name>
+    <managed-bean-class>tms.view.backing.Admin</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Admin.jsp-->
+  </managed-bean>
+</faces-config>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+  <property name="hibernate.connection.password">TM</property>
+  <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+  <property name="hibernate.connection.username">TM</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+  <property name="hibernate.show_sql">true</property>
+  <property name="hibernate.current_session_context_class">thread</property>
+  
+ <!--  <property name="hibernate.hbm2ddl.auto">create</property> -->
+  
+  <mapping class="tms.persistence.entities.RegistrationEO"/>
+  <mapping class="tms.persistence.entities.VehicleEO"/>
+  <mapping class="tms.persistence.entities.OwnerEO"/>
+  <mapping class="tms.persistence.entities.UsersEO"/>
+  <mapping class="tms.persistence.entities.RoleEO"/>
+  <mapping class="tms.persistence.entities.OffenseDetailEO"/>
+  <mapping class="tms.persistence.entities.OffenseTypeEO"/>
+ </session-factory>
+</hibernate-configuration>

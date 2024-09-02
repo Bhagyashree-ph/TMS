@@ -1,0 +1,72 @@
+package training.iqgateway.dao.impl;
+
+import java.util.List;
+
+import org.hibernate.query.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import training.iqgateway.dao.CustomerDAO;
+import training.iqgateway.entities.CustomerEO;
+import training.iqgateway.util.*;
+
+public class CustomerDAOImpl implements CustomerDAO {
+
+	@Override
+	public Integer addCustomer(CustomerEO CustomerEORef) {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().openSession();
+		Transaction txn = sessionRef.getTransaction();
+		txn.begin();
+		Integer returnedID = (Integer) sessionRef.save(CustomerEORef);
+		txn.commit();
+		sessionRef.close();
+		return returnedID;
+	}
+
+	@Override
+	public void updateCustomer(CustomerEO CustomerEORef) {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().getCurrentSession();
+		Transaction txn = sessionRef.getTransaction();
+		txn.begin();
+		sessionRef.update(CustomerEORef);
+		txn.commit();
+		sessionRef.close();
+	}
+
+	@Override
+	public void deleteCustomer(Integer custId) {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().openSession();
+		Transaction txn = sessionRef.getTransaction();
+
+		CustomerEO foundDeptRef = sessionRef.get(CustomerEO.class, custId);
+		if (foundDeptRef != null) {
+			txn.begin();
+			sessionRef.delete(foundDeptRef);
+			txn.commit();
+		}
+		sessionRef.close();
+	}
+
+	@Override
+	public CustomerEO findCustomerByID(Integer custId) {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().openSession();
+		CustomerEO foundCustomerEO = sessionRef.get(CustomerEO.class, custId);
+		sessionRef.close();
+		return foundCustomerEO;
+	}
+
+	@Override
+	public List<CustomerEO> findAll() {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().openSession();
+		Query queryRef = sessionRef.getNamedQuery("findAllDepts");
+		List<CustomerEO> custList = queryRef.list();
+		sessionRef.close();
+		return custList;
+	}
+
+}

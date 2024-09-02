@@ -1,0 +1,58 @@
+package training.iqgateway.tests;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.junit.*;
+
+import training.iqgateway.dao.CustomerDAO;
+import training.iqgateway.dao.impl.CustomerDAOImpl;
+import training.iqgateway.entities.CustomerEO;
+
+public class CustomerTest {
+
+	private CustomerDAO custDAORef = new CustomerDAOImpl();
+
+	@Test
+	public void addCustomerTest() {
+		CustomerEO CustomerEORef = new CustomerEO(110, "Shruti", "Bangalore", "+91 9876543210");
+		Integer returnedCustId = custDAORef.addCustomer(CustomerEORef);
+		Assert.assertEquals(new Integer(320), returnedCustId);
+	}
+
+	@Test
+	public void updateCustomerTest() {
+		CustomerEO CustomerEORef = new CustomerEO(110, "Shruti", "Bangalore", "+91 9456783210");
+		custDAORef.updateCustomer(CustomerEORef);
+		CustomerEO returnedCustEORef = custDAORef.findCustomerByID(320);
+		Assert.assertEquals("+91 9456783210", returnedCustEORef.getPhone());
+	}
+
+	@Test
+	public void deleteDepartmnetTest() {
+		Integer toBeDeleted = new Integer(110);
+		custDAORef.deleteCustomer(toBeDeleted);
+		CustomerEO returnedCustEORef = custDAORef.findCustomerByID(110);
+		Assert.assertNull(returnedCustEORef);
+	}
+
+	@Test
+	public void finByDeptIDTest() {
+		Integer toBeFound = new Integer(110);
+		CustomerEO returnedCustEORef = custDAORef.findCustomerByID(toBeFound);
+		Assert.assertNotNull(returnedCustEORef);
+	}
+
+	@Test
+	public void findAllDeptTest() {
+		// Invoke the operation
+		List<CustomerEO> returnedDeptsList = custDAORef.findAll();
+		Assert.assertNotNull(returnedDeptsList);
+		for (Iterator iterator = returnedDeptsList.iterator(); iterator.hasNext();) {
+			CustomerEO CustomerEO = (CustomerEO) iterator.next();
+			System.out.println(CustomerEO);
+		}
+
+	}
+
+}

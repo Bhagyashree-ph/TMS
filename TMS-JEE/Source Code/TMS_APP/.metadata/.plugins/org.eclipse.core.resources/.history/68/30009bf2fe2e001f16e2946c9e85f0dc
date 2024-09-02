@@ -1,0 +1,19 @@
+package training.iqgateway.dao;
+
+import java.util.List;
+
+import training.iqgateway.entities.CustomerEO;
+
+public interface CustomerDAO {
+
+	public Integer addDepartment(CustomerEO CustomerEORef);
+	
+	public void updateDepartment(CustomerEO CustomerEORef);
+	
+	public void deleteDepartment(Integer givenDepartmentID);
+	
+	public CustomerEO findDepartmentByID(Integer givenDepartmentID);
+	
+	public List<CustomerEO> findAll();
+	
+}

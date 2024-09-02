@@ -1,0 +1,107 @@
+package training.iqgateway.dao.impl;
+
+import java.util.List;
+
+import org.hibernate.query.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import training.iqgateway.dao.CustomerDAO;
+import training.iqgateway.entities.DepartmentEO;
+import training.iqgateway.util.*;
+
+public class CustomerDAOImpl implements CustomerDAO {
+
+	@Override
+	public Integer addDepartment(DepartmentEO departmentEORef) {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().openSession();
+		Transaction txn = sessionRef.getTransaction();
+		txn.begin();
+		Integer returnedID = (Integer) sessionRef.save(departmentEORef);
+		txn.commit();
+		sessionRef.close();
+		return returnedID;
+	}
+
+	@Override
+	public void updateDepartment(DepartmentEO departmentEORef) {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().getCurrentSession();
+		Transaction txn = sessionRef.getTransaction();
+		txn.begin();
+		sessionRef.update(departmentEORef);
+		txn.commit();
+		sessionRef.close();
+	}
+
+	@Override
+	public void deleteDepartment(Integer givenDepartmentID) {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().openSession();
+		Transaction txn = sessionRef.getTransaction();
+
+		DepartmentEO foundDeptRef = sessionRef.get(DepartmentEO.class, givenDepartmentID);
+		if (foundDeptRef != null) {
+			txn.begin();
+			sessionRef.delete(foundDeptRef);
+			txn.commit();
+		}
+		sessionRef.close();
+	}
+
+	@Override
+	public DepartmentEO findDepartmentByID(Integer givenDepartmentID) {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().openSession();
+		DepartmentEO foundDepartmentEO = sessionRef.get(DepartmentEO.class, givenDepartmentID);
+		sessionRef.close();
+		return foundDepartmentEO;
+	}
+
+	@Override
+	public List<DepartmentEO> findAll() {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().openSession();
+		Query queryRef = sessionRef.getNamedQuery("findAllDepts");
+		List<DepartmentEO> returnedDeptList = queryRef.list();
+		sessionRef.close();
+		return returnedDeptList;
+	}
+
+	@Override
+	public List<DepartmentEO> findDepartmentNameAndManagerID() {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().openSession();
+		Query queryRef = sessionRef.createQuery("findNameAndMgr");
+		List<DepartmentEO> depts = queryRef.getResultList();
+		return depts;
+	}
+
+	@Override
+	public List<DepartmentEO> findDepartmentByName(String givenDeptName) {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().openSession();
+		String findQueryByName = "select deptRef from DepartmentEO deptRef where deptRef.departmentName= :dName";
+		
+		Query queryRef = sessionRef.createQuery(findQueryByName);
+		queryRef.setParameter("dName", givenDeptName);
+		
+		List<DepartmentEO> depts = queryRef.getResultList();
+		return depts;
+	}
+
+	@Override
+	public List<DepartmentEO> findDeptByGivenLocationID(Integer givenLocationID) {
+		// TODO Auto-generated method stub
+		Session sessionRef = HibernateUtil.getSessionFactory().openSession();
+		String findQueryBylocation = "select deptRef from DepartmentEO deptRef where deptRef.locationId= :dLocation";
+		
+		Query queryRef = sessionRef.createQuery(findQueryBylocation);
+		queryRef.setParameter("dLocation", givenLocationID);
+		
+		List<DepartmentEO> depts = queryRef.getResultList();
+		return depts;
+	}
+
+}

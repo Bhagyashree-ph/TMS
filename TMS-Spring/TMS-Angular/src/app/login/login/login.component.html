@@ -1,0 +1,45 @@
+<!-- login.component.html -->
+<div class="login-container">
+    <div>
+      <h1 id="heading">Traffic Management System</h1>
+    <mat-card class="login-card">
+      <mat-card-header class="loginheader">
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <br/>
+
+      <!-- Monkey image -->
+    <div class="emojis">
+      <div class="normal emoji" *ngIf="!passwordEntered && !buttonHovered">🐵 </div>
+      <div class="closed emoji" *ngIf="passwordEntered && !buttonHovered">🙈</div>
+      <div class="hover emoji" *ngIf="buttonHovered">🙊</div>
+    </div>
+
+      <mat-card-content>
+        <form [formGroup]="loginForm">
+          <mat-form-field class="full-width"> 
+            <input matInput formControlName="username" placeholder="User ID">
+          </mat-form-field>
+          <!-- user id validation -->
+          <mat-error *ngIf="loginForm.controls.username.invalid && loginForm.controls.username.touched">
+            <ng-container *ngIf="loginForm.controls.username.errors?.required">User ID is required</ng-container>
+          </mat-error>
+          <br />
+          <mat-form-field class="full-width">
+            <input matInput type="password" formControlName="password" placeholder="Password" (click)="passClicked()">
+          </mat-form-field>
+          <!-- password validation -->
+          <mat-error *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+            <ng-container *ngIf="loginForm.controls.password.errors?.required">Invalid password</ng-container>
+          </mat-error>
+          <br />
+          <button mat-raised-button color="primary"  
+                        (click)="login()" 
+                        (mouseover)="buttonHovered = true" 
+                        (mouseout)="buttonHovered = false">
+            Login </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+    </div>
+</div>

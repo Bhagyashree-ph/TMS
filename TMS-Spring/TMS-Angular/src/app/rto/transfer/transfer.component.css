@@ -1,0 +1,100 @@
+.row{
+    margin-top: 20px;
+    padding-top: 10px;
+    border-radius: 3px;
+    background-color: #eee;
+    transition: opacity 0.5s ease-in-out;
+    background-color: rgba(166, 166, 197, 0.1); 
+}
+
+input[type="text"]{
+    width: 100%;
+}
+
+h2{
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(151, 151, 194, 0.1);
+}
+
+#offense-table-container {
+    /* display: none; Initially hide the table */
+    margin-top: 20px;
+  }
+  
+  #offense-table-container table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #offense-table-container th, #offense-table-container td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  #offense-table-container th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+p{
+    font-size: 20px;
+}
+
+/* 
+<div>
+  <button id="open-popup-btn">View Offenses</button>
+  <div id="offense-popup" class="hidden">
+    <h3>Pending offenses</h3>
+    <div id="offense-table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Offense detail id</th>
+            <th>Offense date time</th>
+            <th>Place</th>
+            <th>Image</th>
+            <th>Registration id</th>
+            <th>Offense id</th>
+            <th>Recorded by</th>
+            <th>Penalty status</th>
+          </tr>
+        </thead>
+        <tbody>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+*/
+
+#offense-popup {
+    position: fixed; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: none;
+    width: 80%; 
+    max-width: 500px; 
+    z-index: 10; 
+  }
+  
+  #offense-popup.show {
+    display: block; 
+  }
+  
+  #open-popup-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+

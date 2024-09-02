@@ -1,0 +1,97 @@
+package training.iqgateway.tests;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.junit.*;
+
+import training.iqgateway.dao.CustomerDAO;
+import training.iqgateway.dao.impl.DepartmentDAOImpl;
+import training.iqgateway.entities.DepartmentEO;
+
+public class DepartmentTest {
+
+	private CustomerDAO departmentDAORef = new DepartmentDAOImpl();
+
+	@Test
+	public void addDepartmentTest() {
+		DepartmentEO departmentEORef = new DepartmentEO(320, "Testing", 100, 1700);
+		// Invoke the operation
+		Integer returnedDepartmentID = departmentDAORef.addDepartment(departmentEORef);
+		// Test the operation
+		Assert.assertEquals(new Integer(320), returnedDepartmentID);
+	}
+
+	@Test
+	public void updateDepartmentTest() {
+		DepartmentEO departmentEORef = new DepartmentEO(320, "Learning and Development", 100, 1700);
+		// Invoke the operation
+		departmentDAORef.updateDepartment(departmentEORef);
+		// Test the operation
+		DepartmentEO returnedDeptEORef = departmentDAORef.findDepartmentByID(320);
+		Assert.assertEquals("Learning and Development", returnedDeptEORef.getDepartmentName());
+	}
+
+	@Test
+	public void deleteDepartmnetTest() {
+		// Invoke the operation
+		Integer toBeDeleted = new Integer(320);
+		departmentDAORef.deleteDepartment(toBeDeleted);
+		// Test the operation
+		DepartmentEO returnedDeptEORef = departmentDAORef.findDepartmentByID(320);
+		Assert.assertNull(returnedDeptEORef);
+	}
+	
+	@Test
+	public void finByDeptIDTest() {
+		// Invoke the operation
+		Integer toBeFound = new Integer(110);
+		// Test the operation
+		DepartmentEO returnedDeptEORef = departmentDAORef.findDepartmentByID(toBeFound);
+		Assert.assertNotNull(returnedDeptEORef);
+	}
+	
+	@Test
+	public void findAllDeptTest() {
+		//Invoke the operation
+		List<DepartmentEO> returnedDeptsList = departmentDAORef.findAll();
+		Assert.assertNotNull(returnedDeptsList);
+		for (Iterator iterator = returnedDeptsList.iterator(); iterator.hasNext();) {
+			DepartmentEO departmentEO = (DepartmentEO) iterator.next();
+			System.out.println(departmentEO);
+		}
+		
+	}
+	
+	@Test
+	public void findDeptNameAndMgrIDTest() {
+		//Invoke the operation
+		List<DepartmentEO> returnedDeptsList = departmentDAORef.findDepartmentNameAndManagerID();
+		Assert.assertNotNull(returnedDeptsList);
+		for (Iterator iterator = returnedDeptsList.iterator(); iterator.hasNext();) {
+			Object	[]depts = (Object[]) iterator.next();
+			System.out.println(depts[0] + " " + depts[1]);
+		}
+		
+	}
+	
+	@Test
+	public void findDepartmentByNameTest() {
+		List<DepartmentEO> returnedDeptsList = departmentDAORef.findDepartmentByName("Testing");
+		Assert.assertNotNull(returnedDeptsList);
+		for (Iterator iterator = returnedDeptsList.iterator(); iterator.hasNext();) {
+			DepartmentEO departmentEO = (DepartmentEO) iterator.next();
+			System.out.println(departmentEO);
+		}
+	}
+	
+	@Test
+	public void findDeptByGivenLocationIDTest() {
+		List<DepartmentEO> returnedDeptsList = departmentDAORef.findDeptByGivenLocationID(1700);
+		Assert.assertNotNull(returnedDeptsList);
+		for (Iterator iterator = returnedDeptsList.iterator(); iterator.hasNext();) {
+			DepartmentEO departmentEO = (DepartmentEO) iterator.next();
+			System.out.println(departmentEO);
+		}
+	}
+}

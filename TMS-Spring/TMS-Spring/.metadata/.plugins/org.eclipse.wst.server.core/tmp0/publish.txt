@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Jun 24 22:22:00 IST 2024
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\bhagya.shree\\OneDrive\ -\ iqgateway\ pvt\ ltd\\Training\\TMS\\Angular\\Source\ Code\\TMS-Spring\\TMS\\WebContent\\WEB-INF\\lib\\spring-web-5.0.4.RELEASE-sources.jar=WEB-INF/lib/spring-web-5.0.4.RELEASE-sources.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\bhagya.shree\\OneDrive\ -\ iqgateway\ pvt\ ltd\\Training\\TMS\\Angular\\Source\ Code\\TMS-Spring\\TMS\\WebContent\\WEB-INF\\lib\\spring-web-5.0.4.RELEASE.jar=WEB-INF/lib/spring-web-5.0.4.RELEASE.jar

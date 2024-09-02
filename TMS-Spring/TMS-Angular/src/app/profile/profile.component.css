@@ -1,0 +1,52 @@
+.profile-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  margin-right: 20px;
+  cursor: pointer; /* add a pointer cursor on hover */
+}
+
+.profile-avatar:hover {
+  background-color: #444;
+}
+
+.profile-details {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.profile-details p {
+  margin-bottom: 10px;
+}
+
+.profile-details strong {
+  font-weight: bold;
+  margin-right: 10px;
+} 
+
+h2{
+  font-size: 40px;
+  text-align: center;
+  margin-top: 35px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}

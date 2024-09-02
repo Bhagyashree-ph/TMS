@@ -1,0 +1,15 @@
+<div class="profile-container">
+    <div class="profile-header">
+      <!-- <img [src]="userProfilePicture" alt="Profile Picture" class="profile-picture"> -->
+    <mat-avatar [matTooltip]="currUser.userName" class="profile-avatar">
+      <h2>{{ avatarName[0][0] + avatarName[1][0] }}</h2>
+    </mat-avatar>
+    </div>
+    <div class="profile-details">
+      <p><strong>User ID:</strong> {{ currUser.userId }}</p>
+      <p><strong>User Name:</strong> {{ currUser.userName }}</p>
+      <p><strong>Password:</strong> {{ currUser.password }}</p>
+      <p><strong>Email:</strong> {{ currUser.email }}</p>
+      <p><strong>Role:</strong> {{ currUser.role.roleName }}</p>
+    </div>
+  </div>

@@ -1,0 +1,60 @@
+@startuml
+annotation java.lang.Override
+class java.util.ArrayList
+class tms.persistence.dao.impl.OffenceDetailDAOImpl
+class tms.persistence.dao.impl.OffenceTypeDAOImpl
+class tms.persistence.dao.impl.OwnerDAOImpl
+class tms.persistence.dao.impl.RegistrationDAOImpl
+class tms.persistence.dao.impl.RoleDAOImpl
+class tms.persistence.dao.impl.UserDAOImpl
+class tms.persistence.dao.impl.VehicleDAOImpl
+class tms.persistence.entity.OffenceDetailEO
+class tms.persistence.entity.OffenceTypeEO
+class tms.persistence.entity.OwnerEO
+class tms.persistence.entity.RegistrationEO
+class tms.persistence.entity.RoleEO
+class tms.persistence.entity.UserEO
+class tms.persistence.entity.VehicleEO
+class tms.persistence.utility.ResourceManager
+interface tms.persistence.dao.DAO
+tms.persistence.dao.impl.OffenceDetailDAOImpl ..> java.lang.Override
+tms.persistence.dao.impl.OffenceDetailDAOImpl ..> java.util.ArrayList
+tms.persistence.dao.impl.OffenceDetailDAOImpl ..> tms.persistence.entity.OffenceDetailEO
+tms.persistence.dao.impl.OffenceDetailDAOImpl ..> tms.persistence.entity.OffenceTypeEO
+tms.persistence.dao.impl.OffenceDetailDAOImpl ..> tms.persistence.entity.RegistrationEO
+tms.persistence.dao.impl.OffenceDetailDAOImpl ..> tms.persistence.entity.UserEO
+tms.persistence.dao.impl.OffenceDetailDAOImpl ..> tms.persistence.utility.ResourceManager
+tms.persistence.dao.impl.OffenceDetailDAOImpl --|> tms.persistence.dao.DAO
+tms.persistence.dao.impl.OffenceTypeDAOImpl ..> java.lang.Override
+tms.persistence.dao.impl.OffenceTypeDAOImpl ..> tms.persistence.entity.OffenceTypeEO
+tms.persistence.dao.impl.OffenceTypeDAOImpl ..> tms.persistence.utility.ResourceManager
+tms.persistence.dao.impl.OffenceTypeDAOImpl --|> tms.persistence.dao.DAO
+tms.persistence.dao.impl.OwnerDAOImpl ..> java.lang.Override
+tms.persistence.dao.impl.OwnerDAOImpl ..> java.util.ArrayList
+tms.persistence.dao.impl.OwnerDAOImpl ..> tms.persistence.entity.OwnerEO
+tms.persistence.dao.impl.OwnerDAOImpl ..> tms.persistence.utility.ResourceManager
+tms.persistence.dao.impl.OwnerDAOImpl --|> tms.persistence.dao.DAO
+tms.persistence.dao.impl.RegistrationDAOImpl ..> java.lang.Override
+tms.persistence.dao.impl.RegistrationDAOImpl ..> java.util.ArrayList
+tms.persistence.dao.impl.RegistrationDAOImpl ..> tms.persistence.entity.OwnerEO
+tms.persistence.dao.impl.RegistrationDAOImpl ..> tms.persistence.entity.RegistrationEO
+tms.persistence.dao.impl.RegistrationDAOImpl ..> tms.persistence.entity.VehicleEO
+tms.persistence.dao.impl.RegistrationDAOImpl ..> tms.persistence.utility.ResourceManager
+tms.persistence.dao.impl.RegistrationDAOImpl --|> tms.persistence.dao.DAO
+tms.persistence.dao.impl.RoleDAOImpl ..> java.lang.Override
+tms.persistence.dao.impl.RoleDAOImpl ..> java.util.ArrayList
+tms.persistence.dao.impl.RoleDAOImpl ..> tms.persistence.entity.RoleEO
+tms.persistence.dao.impl.RoleDAOImpl ..> tms.persistence.utility.ResourceManager
+tms.persistence.dao.impl.RoleDAOImpl --|> tms.persistence.dao.DAO
+tms.persistence.dao.impl.UserDAOImpl ..> java.lang.Override
+tms.persistence.dao.impl.UserDAOImpl ..> java.util.ArrayList
+tms.persistence.dao.impl.UserDAOImpl ..> tms.persistence.entity.RoleEO
+tms.persistence.dao.impl.UserDAOImpl ..> tms.persistence.entity.UserEO
+tms.persistence.dao.impl.UserDAOImpl ..> tms.persistence.utility.ResourceManager
+tms.persistence.dao.impl.UserDAOImpl --|> tms.persistence.dao.DAO
+tms.persistence.dao.impl.VehicleDAOImpl ..> java.lang.Override
+tms.persistence.dao.impl.VehicleDAOImpl ..> java.util.ArrayList
+tms.persistence.dao.impl.VehicleDAOImpl ..> tms.persistence.entity.VehicleEO
+tms.persistence.dao.impl.VehicleDAOImpl ..> tms.persistence.utility.ResourceManager
+tms.persistence.dao.impl.VehicleDAOImpl --|> tms.persistence.dao.DAO
+@enduml

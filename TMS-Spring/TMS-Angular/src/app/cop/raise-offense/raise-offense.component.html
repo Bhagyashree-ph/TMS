@@ -1,0 +1,60 @@
+
+<div>
+<h1 id="heading">Report an Offense</h1>
+  <form action="/submit-offense" method="post" enctype="multipart/form-data"
+        [formGroup]="raiseForm">
+        
+      
+  <!-- Registration id -->
+    <div>
+      <label for="registration-id">Registration No:<span class="text-danger">*</span></label>
+      <input type="text" name="registration-id" id="registration-id" placeholder="Enter registration number" formControlName="registration">
+    </div>
+	<br>
+
+    <!-- Offense id -->
+    <div>
+      <label for="offenseid">Offense ID:<span class="text-danger">*</span></label>
+      <!-- <mat-form-field> -->
+        <input type="text" 
+               name="offenseid" 
+               id="offenseid" 
+               placeholder="Enter Offense Id"
+               formControlName="offensetype"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayOffense">
+          <mat-option *ngFor="let offense of filteredOffenses | async" [value]="offense">
+            {{ offense.offenseId }}  - {{ offense.offenseName }}
+          </mat-option>
+        </mat-autocomplete>
+      <!-- </mat-form-field> -->
+    </div>
+    <!-- Error messages -->
+    <!-- <div *ngIf="raiseForm.controls.offenseid.invalid && raiseForm.controls.offenseid.touched"
+    class="alert alert-danger">
+        Offense id is invalid!
+    </div> -->
+
+    <!-- Place -->
+	<br>
+    <div>
+      <label for="place">Place:<span class="text-danger">*</span></label>
+      <input type="text" name="place" id="place" placeholder="Enter the location" formControlName="place">
+    </div>
+
+    <!-- Proof -->
+	<br>
+    <div>
+      <label for="image">Proof (Optional):</label>
+      <input type="file" name="image" id="image" accept="image/*" formControlName="image">
+    </div>
+	<br>
+  <div class="btnContainer">
+    <button class="btn btn-success" type="submit" [disabled] = "!raiseForm.valid" (click)="reportOffense()" >Submit Report</button>
+  </div>
+  </form>
+<br>
+      <!-- Log the values to check for the binding in view-model -->
+      <!-- <p> Form value {{ raiseForm.value | json }} </p> <br>
+      <p> Form status {{ raiseForm.status | json}} </p>
+    </div> -->

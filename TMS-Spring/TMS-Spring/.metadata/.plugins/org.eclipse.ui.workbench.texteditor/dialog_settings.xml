@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="OffenseDetailId" key="selection"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="OffenseDetailId"/>
+			<item value="throws Exception"/>
+			<item value="main-controller"/>
+			<item value="service"/>
+			<item value="ownerRef"/>
+			<item value="vehicleRef"/>
+			<item value="regRef"/>
+			<item value="offDetailRef"/>
+		</list>
+		<list key="replacehistory">
+			<item value="offenseDetailId"/>
+			<item value=""/>
+			<item value="ownerDAORef"/>
+			<item value="vehicleDAORef"/>
+			<item value="regDAORef"/>
+			<item value="offDetailDAORef"/>
+			<item value="Offense"/>
+			<item value="OffenseTypeEO"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="427" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|10.5|0|WINDOWS|1|-21|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="583" key="DIALOG_HEIGHT"/>
+		<item value="1112" key="DIALOG_X_ORIGIN"/>
+		<item value="221" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

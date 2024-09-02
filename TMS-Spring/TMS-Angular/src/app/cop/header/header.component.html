@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" class="navbar">
+    <div class="logo">
+        <img src="assets/logo.png" alt="TMS" width="64px" height="64px">
+    </div>
+    <div>
+        <a mat-flat-button color="primary" routerLink="cophome" id="Home">Home page</a>
+        <a mat-flat-button color="primary" routerLink="raise"> Raise offense</a>
+        <a mat-flat-button color="primary" routerLink="clear"> Clear offense</a>
+        <a mat-flat-button color="primary" routerLink="view">View offense</a>
+        <a mat-flat-button color="primary" routerLink="vehown" *ngIf="showVehOwn">Autoprofile</a>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon font-size="24px" font-weight="bold">menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="toggleTheme()">
+                <span><mat-icon font-size="24px" font-weight="bold">invert_colors</mat-icon>Toggle Theme</span>
+            </button>
+            <button mat-menu-item routerLink="profile">
+                <span><mat-icon font-size="24px" font-weight="bold">account_circle</mat-icon>Profile</span>
+            </button>
+            <button mat-menu-item routerLink="login">
+                <span><mat-icon font-size="24px" font-weight="bold">exit_to_app</mat-icon>Log out</span>
+            </button>
+        </mat-menu>
+    </div>
+</mat-toolbar>

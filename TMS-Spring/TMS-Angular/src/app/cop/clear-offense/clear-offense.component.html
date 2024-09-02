@@ -1,0 +1,98 @@
+<h1 id="heading">Clear Offenses</h1>
+
+<div class="searchBox">
+  <form [formGroup]="clearOffense" (ngSubmit)="onSubmit()">
+
+    <label for="registration-no" style="margin-right: 30px;">Registration No:<span class="text-danger">*</span></label>
+    <input type="text" id="registrationNo" name="registrationNo" style="margin-right: 30px;"
+      placeholder="Enter registration number" formControlName="registrationNo" />
+
+    <button class="btn btn-primary" type="submit" style="margin-right: 30px;"
+      [disabled]="isLoading || !clearOffense.valid">Search Offenses</button>
+    <button class="btn btn-success" type="button" (click)="clearSelected()"
+      [disabled]="isLoading || !offenseData.length">Clear Selected</button>
+  </form>
+</div>
+
+<div class="spinner">
+  <mat-progress-spinner mode="indeterminate" *ngIf="isLoading">
+  </mat-progress-spinner>
+</div>
+
+<p>{{ selectedOffenseIds }}</p>
+<div *ngIf="offenseData.length > 0" id="offense-table-container">
+  <table mat-table [dataSource]="offenseData" class="mat-elevation-z1">
+
+    <!-- Selecting the offense -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() &&!isAllSelected()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let offense">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event? toggleSelection(offense) : null"
+                      [checked]="selection.isSelected(offense)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <!-- Offense detail id Column -->
+    <ng-container matColumnDef="offenseDetailId">
+      <th mat-header-cell *matHeaderCellDef> Offense detail id </th>
+      <td mat-cell *matCellDef="let offense"> {{ offense.offenseDetailId }} </td>
+    </ng-container>
+
+    <!-- Offense date time Column -->
+    <ng-container matColumnDef="dateTime">
+      <th mat-header-cell *matHeaderCellDef> Offense date time </th>
+      <td mat-cell *matCellDef="let offense"> {{ offense.dateTime }} </td>
+    </ng-container>
+
+    <!-- Place Column -->
+    <ng-container matColumnDef="place">
+      <th mat-header-cell *matHeaderCellDef> Place </th>
+      <td mat-cell *matCellDef="let offense"> {{ offense.place }} </td>
+    </ng-container>
+
+    <!-- Image Column -->
+    <ng-container matColumnDef="image">
+      <th mat-header-cell *matHeaderCellDef> Image </th>
+      <td mat-cell *matCellDef="let offense"> {{ offense.image }} </td>
+    </ng-container>
+
+    <!-- Registration id Column -->
+    <ng-container matColumnDef="registrationID">
+      <th mat-header-cell *matHeaderCellDef> Registration id </th>
+      <td mat-cell *matCellDef="let offense"> {{ offense.registration.registrationID }} </td>
+    </ng-container>
+
+    <!-- Offense id Column -->
+    <ng-container matColumnDef="offenseId">
+      <th mat-header-cell *matHeaderCellDef> Offense id </th>
+      <td mat-cell *matCellDef="let offense"> {{ offense.offense.offenseId }} </td>
+    </ng-container>
+
+    <!-- Recorded by Column -->
+    <ng-container matColumnDef="recordedBy">
+      <th mat-header-cell *matHeaderCellDef> Recorded by </th>
+      <td mat-cell *matCellDef="let offense"> {{ offense.user.userId }} </td>
+    </ng-container>
+
+    <!-- Penalty status Column -->
+    <ng-container matColumnDef="penaltyStatus">
+      <th mat-header-cell *matHeaderCellDef> Penalty status </th>
+      <td mat-cell *matCellDef="let offense"> {{ offense.penaltyStatus }} </td>
+    </ng-container>
+
+    <tr mat-header-row
+      *matHeaderRowDef="['select', 'offenseDetailId', 'dateTime', 'place', 'image', 'registrationID', 'offenseId', 'recordedBy', 'penaltyStatus']">
+    </tr>
+    <tr mat-row
+      *matRowDef="let row; columns: ['select', 'offenseDetailId', 'dateTime', 'place', 'image', 'registrationID', 'offenseId', 'recordedBy', 'penaltyStatus'];">
+    </tr>
+
+  </table>
+</div>

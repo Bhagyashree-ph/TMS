@@ -1,0 +1,173 @@
+@startuml
+annotation java.lang.Override
+annotation java.lang.SuppressWarnings
+class java.awt.Image
+class java.io.File
+class java.io.FileInputStream
+class java.sql.Timestamp
+class java.util.ArrayList
+class java.util.logging.Level
+class java.util.logging.Logger
+class javax.swing.ButtonGroup
+class javax.swing.ImageIcon
+class javax.swing.JFileChooser
+class javax.swing.JFrame
+class javax.swing.JOptionPane
+class javax.swing.filechooser.FileNameExtensionFilter
+class javax.swing.table.DefaultTableModel
+class tms.business.AdminOperations
+class tms.business.ClerkOperations
+class tms.business.LoginOperation
+class tms.business.RTOOperations
+class tms.business.TcopOperations
+class tms.business.impl.AdminOperationsImpl
+class tms.business.impl.ClerkOperationsImpl
+class tms.business.impl.LoginOperationsImpl
+class tms.business.impl.RTOOperationsImpl
+class tms.business.impl.TcopOperationsImpl
+class tms.persistence.entity.OffenceDetailEO
+class tms.persistence.entity.OffenceTypeEO
+class tms.persistence.entity.OwnerEO
+class tms.persistence.entity.RegistrationEO
+class tms.persistence.entity.RoleEO
+class tms.persistence.entity.UserEO
+class tms.persistence.entity.VehicleEO
+class tms.persistence.utility.Validator
+class tms.presentation.Admin.AdminFrame
+class tms.presentation.Clerk.ClerkPage
+class tms.presentation.Login.ForgotPassword
+class tms.presentation.Login.LoginPage
+class tms.presentation.Presentation
+class tms.presentation.RTO.Offence
+class tms.presentation.RTO.Owner
+class tms.presentation.RTO.RTOPage
+class tms.presentation.RTO.Vehicle
+class tms.presentation.TrafficCop.TrafficCopPage
+tms.presentation.Admin.AdminFrame ..> java.lang.Override
+tms.presentation.Admin.AdminFrame ..> java.lang.SuppressWarnings
+tms.presentation.Admin.AdminFrame ..> java.util.ArrayList
+tms.presentation.Admin.AdminFrame ..> java.util.logging.Level
+tms.presentation.Admin.AdminFrame ..> java.util.logging.Logger
+tms.presentation.Admin.AdminFrame --|> javax.swing.JFrame
+tms.presentation.Admin.AdminFrame ..> javax.swing.table.DefaultTableModel
+tms.presentation.Admin.AdminFrame ..> tms.business.AdminOperations
+tms.presentation.Admin.AdminFrame ..> tms.business.impl.AdminOperationsImpl
+tms.presentation.Admin.AdminFrame ..> tms.persistence.entity.RoleEO
+tms.presentation.Admin.AdminFrame ..> tms.persistence.entity.UserEO
+tms.presentation.Admin.AdminFrame ..> tms.persistence.utility.Validator
+tms.presentation.Admin.AdminFrame ..> tms.presentation.Login.LoginPage
+tms.presentation.Clerk.ClerkPage ..> java.lang.SuppressWarnings
+tms.presentation.Clerk.ClerkPage ..> java.io.File
+tms.presentation.Clerk.ClerkPage ..> java.io.FileInputStream
+tms.presentation.Clerk.ClerkPage ..> java.util.ArrayList
+tms.presentation.Clerk.ClerkPage ..> java.util.logging.Level
+tms.presentation.Clerk.ClerkPage ..> java.util.logging.Logger
+tms.presentation.Clerk.ClerkPage ..> javax.swing.JFileChooser
+tms.presentation.Clerk.ClerkPage --|> javax.swing.JFrame
+tms.presentation.Clerk.ClerkPage ..> javax.swing.JOptionPane
+tms.presentation.Clerk.ClerkPage ..> javax.swing.filechooser.FileNameExtensionFilter
+tms.presentation.Clerk.ClerkPage ..> javax.swing.table.DefaultTableModel
+tms.presentation.Clerk.ClerkPage ..> tms.business.ClerkOperations
+tms.presentation.Clerk.ClerkPage ..> tms.business.impl.ClerkOperationsImpl
+tms.presentation.Clerk.ClerkPage ..> tms.persistence.entity.OffenceDetailEO
+tms.presentation.Clerk.ClerkPage ..> tms.persistence.entity.OffenceTypeEO
+tms.presentation.Clerk.ClerkPage ..> tms.persistence.entity.RegistrationEO
+tms.presentation.Clerk.ClerkPage ..> tms.persistence.entity.UserEO
+tms.presentation.Clerk.ClerkPage ..> tms.persistence.utility.Validator
+tms.presentation.Clerk.ClerkPage ..> tms.presentation.Login.LoginPage
+tms.presentation.Login.ForgotPassword ..> java.lang.SuppressWarnings
+tms.presentation.Login.ForgotPassword ..> java.util.logging.Level
+tms.presentation.Login.ForgotPassword ..> java.util.logging.Logger
+tms.presentation.Login.ForgotPassword --|> javax.swing.JFrame
+tms.presentation.Login.ForgotPassword ..> javax.swing.JOptionPane
+tms.presentation.Login.ForgotPassword ..> tms.business.LoginOperation
+tms.presentation.Login.ForgotPassword ..> tms.business.impl.LoginOperationsImpl
+tms.presentation.Login.ForgotPassword ..> tms.persistence.entity.UserEO
+tms.presentation.Login.LoginPage ..> java.lang.SuppressWarnings
+tms.presentation.Login.LoginPage ..> java.util.ArrayList
+tms.presentation.Login.LoginPage ..> java.util.logging.Level
+tms.presentation.Login.LoginPage ..> java.util.logging.Logger
+tms.presentation.Login.LoginPage --|> javax.swing.JFrame
+tms.presentation.Login.LoginPage ..> javax.swing.JOptionPane
+tms.presentation.Login.LoginPage ..> tms.business.AdminOperations
+tms.presentation.Login.LoginPage ..> tms.business.LoginOperation
+tms.presentation.Login.LoginPage ..> tms.business.impl.AdminOperationsImpl
+tms.presentation.Login.LoginPage ..> tms.business.impl.LoginOperationsImpl
+tms.presentation.Login.LoginPage ..> tms.persistence.entity.RoleEO
+tms.presentation.Login.LoginPage ..> tms.persistence.entity.UserEO
+tms.presentation.Login.LoginPage ..> tms.persistence.utility.Validator
+tms.presentation.Login.LoginPage ..> tms.presentation.Admin.AdminFrame
+tms.presentation.Login.LoginPage ..> tms.presentation.Clerk.ClerkPage
+tms.presentation.Login.LoginPage ..> tms.presentation.RTO.RTOPage
+tms.presentation.Login.LoginPage ..> tms.presentation.TrafficCop.TrafficCopPage
+tms.presentation.Presentation ..> tms.presentation.Login.LoginPage
+tms.presentation.RTO.Offence ..> java.lang.SuppressWarnings
+tms.presentation.RTO.Offence ..> java.util.ArrayList
+tms.presentation.RTO.Offence ..> java.util.logging.Level
+tms.presentation.RTO.Offence ..> java.util.logging.Logger
+tms.presentation.RTO.Offence --|> javax.swing.JFrame
+tms.presentation.RTO.Offence ..> javax.swing.JOptionPane
+tms.presentation.RTO.Offence ..> javax.swing.table.DefaultTableModel
+tms.presentation.RTO.Offence ..> tms.business.RTOOperations
+tms.presentation.RTO.Offence ..> tms.business.impl.RTOOperationsImpl
+tms.presentation.RTO.Offence ..> tms.persistence.entity.OffenceDetailEO
+tms.presentation.RTO.Offence ..> tms.presentation.Clerk.ClerkPage
+tms.presentation.RTO.Owner ..> java.lang.SuppressWarnings
+tms.presentation.RTO.Owner ..> java.util.logging.Level
+tms.presentation.RTO.Owner ..> java.util.logging.Logger
+tms.presentation.RTO.Owner --|> javax.swing.JFrame
+tms.presentation.RTO.Owner ..> javax.swing.JOptionPane
+tms.presentation.RTO.Owner ..> tms.business.RTOOperations
+tms.presentation.RTO.Owner ..> tms.business.impl.RTOOperationsImpl
+tms.presentation.RTO.Owner ..> tms.persistence.entity.OwnerEO
+tms.presentation.RTO.RTOPage ..> java.lang.SuppressWarnings
+tms.presentation.RTO.RTOPage ..> java.io.File
+tms.presentation.RTO.RTOPage ..> java.util.ArrayList
+tms.presentation.RTO.RTOPage ..> java.util.logging.Level
+tms.presentation.RTO.RTOPage ..> java.util.logging.Logger
+tms.presentation.RTO.RTOPage ..> javax.swing.ButtonGroup
+tms.presentation.RTO.RTOPage --|> javax.swing.JFrame
+tms.presentation.RTO.RTOPage ..> javax.swing.JOptionPane
+tms.presentation.RTO.RTOPage ..> javax.swing.table.DefaultTableModel
+tms.presentation.RTO.RTOPage ..> tms.business.RTOOperations
+tms.presentation.RTO.RTOPage ..> tms.business.impl.RTOOperationsImpl
+tms.presentation.RTO.RTOPage ..> tms.persistence.entity.OffenceTypeEO
+tms.presentation.RTO.RTOPage ..> tms.persistence.entity.OwnerEO
+tms.presentation.RTO.RTOPage ..> tms.persistence.entity.RegistrationEO
+tms.presentation.RTO.RTOPage ..> tms.persistence.entity.VehicleEO
+tms.presentation.RTO.RTOPage ..> tms.persistence.utility.Validator
+tms.presentation.RTO.RTOPage ..> tms.presentation.Login.LoginPage
+tms.presentation.RTO.Vehicle ..> java.lang.SuppressWarnings
+tms.presentation.RTO.Vehicle ..> java.util.logging.Level
+tms.presentation.RTO.Vehicle ..> java.util.logging.Logger
+tms.presentation.RTO.Vehicle --|> javax.swing.JFrame
+tms.presentation.RTO.Vehicle ..> javax.swing.JOptionPane
+tms.presentation.RTO.Vehicle ..> tms.business.RTOOperations
+tms.presentation.RTO.Vehicle ..> tms.business.impl.RTOOperationsImpl
+tms.presentation.RTO.Vehicle ..> tms.persistence.entity.VehicleEO
+tms.presentation.TrafficCop.TrafficCopPage ..> java.lang.SuppressWarnings
+tms.presentation.TrafficCop.TrafficCopPage ..> java.awt.Image
+tms.presentation.TrafficCop.TrafficCopPage ..> java.io.File
+tms.presentation.TrafficCop.TrafficCopPage ..> java.io.FileInputStream
+tms.presentation.TrafficCop.TrafficCopPage ..> java.sql.Timestamp
+tms.presentation.TrafficCop.TrafficCopPage ..> java.util.ArrayList
+tms.presentation.TrafficCop.TrafficCopPage ..> java.util.logging.Level
+tms.presentation.TrafficCop.TrafficCopPage ..> java.util.logging.Logger
+tms.presentation.TrafficCop.TrafficCopPage ..> javax.swing.ImageIcon
+tms.presentation.TrafficCop.TrafficCopPage ..> javax.swing.JFileChooser
+tms.presentation.TrafficCop.TrafficCopPage --|> javax.swing.JFrame
+tms.presentation.TrafficCop.TrafficCopPage ..> javax.swing.JOptionPane
+tms.presentation.TrafficCop.TrafficCopPage ..> javax.swing.filechooser.FileNameExtensionFilter
+tms.presentation.TrafficCop.TrafficCopPage ..> javax.swing.table.DefaultTableModel
+tms.presentation.TrafficCop.TrafficCopPage ..> tms.business.TcopOperations
+tms.presentation.TrafficCop.TrafficCopPage ..> tms.business.impl.TcopOperationsImpl
+tms.presentation.TrafficCop.TrafficCopPage ..> tms.persistence.entity.OffenceDetailEO
+tms.presentation.TrafficCop.TrafficCopPage ..> tms.persistence.entity.OffenceTypeEO
+tms.presentation.TrafficCop.TrafficCopPage ..> tms.persistence.entity.OwnerEO
+tms.presentation.TrafficCop.TrafficCopPage ..> tms.persistence.entity.RegistrationEO
+tms.presentation.TrafficCop.TrafficCopPage ..> tms.persistence.entity.UserEO
+tms.presentation.TrafficCop.TrafficCopPage ..> tms.persistence.entity.VehicleEO
+tms.presentation.TrafficCop.TrafficCopPage ..> tms.persistence.utility.Validator
+tms.presentation.TrafficCop.TrafficCopPage ..> tms.presentation.Clerk.ClerkPage
+tms.presentation.TrafficCop.TrafficCopPage ..> tms.presentation.Login.LoginPage
+@enduml

@@ -1,0 +1,2 @@
+OwnerEO contains: [ownerID: ow001 IDType: Pan card firstName: Bhagya lastName: ph DateOfBirth: 2002-01-12 gender: Female phoneNumber: +919876543210 address: Glb pincode: 585101 occupattion: ASE]
+VehicleEO contains: [vehicleID: 9221 engineNumber: E001 chassisNumber: C001 vehicleType: Two wheeler vehicleBrand: Jupiter vehicleColor: Pink fuelUsed: Petrol manufactureDate: 2022-01-22 manufacturerName: Honda modelNumber: M001]

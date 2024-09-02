@@ -1,0 +1,115 @@
+<div class="container">
+  <h1 id="heading">Find Details</h1>
+ 
+  <div class="searchBox">
+  <form id="search-form" [formGroup]="searchForm">
+      <label for="registration-no" style="margin-right: 30px;">Registration No:<span class="text-danger">*</span></label>
+      <input type="text" style="margin-right: 30px; width: 300px;" name="registration-no" formControlName="registrationNo" id="registration-no" required placeholder="Enter registration number">
+   
+    <button type="submit" class="btn btn-primary" [disabled]="!searchForm.valid" (click)="searchDetails()" >Search Details</button>
+  </form>
+</div>
+ <!-- <p> {{registrationNo}} </p>
+ <p> {{searchForm.value | json}} </p> -->
+
+  <div class="vehownDetails">
+  <div id="owner-vehicle-container" class="row">
+     
+    <div class="owner-details col-6" style="box-shadow: .5px 0 0 #000;">
+      <h2>Owner Details</h2>
+      <!-- <form [formGroup]="ownerForm"> -->
+        <div class="form-group">
+          <label for="ownerId">Owner ID:</label> 
+          <input type="text" id="ownerId" name="ownerId" value="{{owner.ownerId}}" disabled/>
+        </div>
+        <div class="form-group">
+          <label for="idType">ID Type:</label> 
+          <input type="text" id="idType" name="idType" value="{{owner.idType}}" disabled/>
+        </div>
+        <div class="form-group">
+          <label for="firstName">First Name:</label> 
+          <input type="text" id="firstName" value="{{owner.firstName}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" value="{{owner.lastName}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="dateOfBirth">Date of Birth:</label>
+          <input type="text" id="dateOfBirth" value="{{owner.dateOfBirth}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <input type="text" id="gender" value="{{owner.gender}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number:</label>  
+          <input type="text" id="phoneNumber" value="{{owner.phoneNumber}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="address">Address:</label> 
+          <input type="text" id="address" value="{{owner.address}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pincode:</label> 
+          <input type="text" id="pincode" value="{{owner.pincode}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="occupation">Occupation:</label> 
+          <input type="text" id="occupation" value="{{owner.occupation}}" disabled>
+        </div>
+      <!-- </form> -->
+    </div>
+
+   
+ 
+    <div class="vehicle-details col-6" style="box-shadow: -.5px 0 0 #000;">
+      <h2>Vehicle Details</h2>
+      <!-- <form [formGroup]="vehicleForm"> -->
+        <div class="form-group">
+          <label for="vehicleId">Vehicle ID:</label>  
+          <input type="text" id="vehicleId" value="{{vehicle.vehicleID}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="engineNumber">Engine Number:</label> 
+          <input type="text" id="engineNumber" value="{{vehicle.engineNumber}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="chassisNumber">Chassis Number:</label> 
+          <input type="text" id="chassisNumber" value="{{vehicle.chassisNumber}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="vehicleType">Vehicle Type:</label>
+          <input type="text" id="vehicleType" value=" {{vehicle.vehicleType}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="vehicleColor">Vehicle Color:</label> 
+          <input type="text" id="vehicleColor" value="{{vehicle.vehicleColor}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="fuelUsed">Fuel Used:</label>
+          <input type="text" id="fuelUsed" value="{{vehicle.fuelUsed}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="manufactureDate">Manufacture Date:</label> 
+          <input type="text" id="manufactureDate" value="{{vehicle.manufacturDate}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="manufacturerName">Manufacturer Name:</label> 
+          <input type="text" id="manufacturerName" value="{{vehicle.manufacturerName}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="model">Model:</label> 
+          <input type="text" id="model" value="{{vehicle.model}}" disabled>
+        </div>
+        <div class="form-group">
+          <label for="variant">Variant:</label> 
+          <input type="text" id="variant" value="{{vehicle.variant}}" disabled>
+        </div>
+      <!-- </form> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <h2>Vehicle and owner</h2> -->

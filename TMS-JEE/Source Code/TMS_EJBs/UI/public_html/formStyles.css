@@ -1,0 +1,129 @@
+        h1{
+            text-align: center;
+    color: #333;
+    font-size: 2.0rem;
+    font-weight: bold;
+    font-family: cursive;
+    color: #e8573e;
+    text-shadow: 2px 2px 4px rgba(10, 10, 10, 0.5);
+        }
+        
+        label {
+            width:100px !important;
+        }
+        body {
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+        }
+        /* Style the form elements */
+        form {
+            margin-top: 50px;
+            padding: 20px;
+            vertical-align: middle;
+            border: 4px double blue;
+        }
+        form div{
+            margin-top:20px;
+        }   
+        label {
+            display: inline-block;
+            width: 100px; /* Adjust as needed */
+            margin-right: 10px;
+            text-align: left;
+        }
+        input, select,.drop{
+            width: 200px; /* Adjust as needed */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .drop{
+            width:220px;
+        }
+        
+        .btn-success{
+            margin-left: 10px !important;
+            margin-right: 10px !important;
+        }
+        
+        .table{
+            margin: auto;
+            margin-top: 20px;
+            border: 1px solid black; 
+    border-collapse: collapse; 
+    width: 100%; 
+        }
+         th, td {
+            border: 1px solid #ddd;
+            padding: 12px; /* Increased padding for spacing */
+            text-align: left;
+        }
+        
+    
+.popup {
+    all: unset;
+    position: absolute;
+    height: 270px;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    background-color: #F2F3F5;
+    translate: -50%-50%;
+    box-shadow: 0 0 10pxrgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    display: inline-block;
+    padding: 0px;
+}
+
+.popup-button {
+    background: #007bff;
+    width: 50.0px;
+    height: 30px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 10px;
+}
+
+.icon {
+    color: Red;
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #FF0000;
+    border: 3px solid Red;
+    padding: 15px;
+    border-radius: 50%;
+    width: 60px;
+}
+
+.error {
+    color: #DB3646;
+    font-size: medium;
+    font-weight: 200 bold;
+}
+
+.success {
+    color: Green;
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #FF0000;
+    border: 3px solid green;
+    padding: 15px;
+    border-radius: 50%;
+    width: 60px;
+}

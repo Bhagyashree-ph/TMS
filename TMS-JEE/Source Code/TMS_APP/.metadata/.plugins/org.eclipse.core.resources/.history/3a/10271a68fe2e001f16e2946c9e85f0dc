@@ -1,0 +1,60 @@
+package training.iqgateway.entities.oneToOne;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "CUSTOMER")
+public class CustomerEO {
+	
+	@Id
+	@Column(name = "CUSTOMER_ID")
+	private Integer custID;
+	
+	@Column(name = "CUSTOMER_NAME")
+	private String custName;
+	
+	@JoinColumn(name = "ADDRESS_ID", referencedColumnName="ADDRESS_ID")
+	private AddressEO addressID;
+
+	public CustomerEO() {
+		super();
+	}
+
+	public CustomerEO(Integer custID, String custName, AddressEO addressID) {
+		super();
+		this.custID = custID;
+		this.custName = custName;
+		this.addressID = addressID;
+	}
+
+	public Integer getCustID() {
+		return custID;
+	}
+
+	public void setCustID(Integer custID) {
+		this.custID = custID;
+	}
+
+	public String getCustName() {
+		return custName;
+	}
+
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public AddressEO getAddressID() {
+		return addressID;
+	}
+
+	public void setAddressID(AddressEO addressID) {
+		this.addressID = addressID;
+	}
+
+	@Override
+	public String toString() {
+		return "CustomerEO [custID=" + custID + ", custName=" + custName + ", addressID=" + addressID + "]";
+	}
+	
+	
+}

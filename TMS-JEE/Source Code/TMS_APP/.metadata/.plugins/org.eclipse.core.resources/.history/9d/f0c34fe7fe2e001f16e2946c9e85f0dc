@@ -1,0 +1,25 @@
+package training.iqgateway.dao;
+
+import java.util.List;
+
+import training.iqgateway.entities.DepartmentEO;
+
+public interface CustomerDAO {
+
+	public Integer addDepartment(DepartmentEO departmentEORef);
+	
+	public void updateDepartment(DepartmentEO departmentEORef);
+	
+	public void deleteDepartment(Integer givenDepartmentID);
+	
+	public DepartmentEO findDepartmentByID(Integer givenDepartmentID);
+	
+	public List<DepartmentEO> findAll();
+	
+	public List findDepartmentNameAndManagerID();
+	
+	public List<DepartmentEO> findDepartmentByName(String givenDeptName);
+	
+	public List<DepartmentEO> findDeptByGivenLocationID(Integer givenLocationID);
+	
+}

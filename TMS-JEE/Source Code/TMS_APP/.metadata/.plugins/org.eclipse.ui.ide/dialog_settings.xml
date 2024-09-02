@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\bhagya.shree\OneDrive - iqgateway pvt ltd\Training\Module-12-Hibernate\Workspaces\Lesson07-HibernateWithAnnotations"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="907" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="503" key="DIALOG_HEIGHT"/>
+		<item value="507" key="DIALOG_X_ORIGIN"/>
+		<item value="169" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="490" key="DIALOG_X_ORIGIN"/>
+		<item value="105" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>
